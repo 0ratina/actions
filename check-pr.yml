@@ -4,7 +4,6 @@
 name: Check PR CI
 
 on:
-
   pull_request:
     branches: [ "main" ]
 
@@ -26,4 +25,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npx tsc --noEmit
+    - run: npm run format
+    - run: npm run types
